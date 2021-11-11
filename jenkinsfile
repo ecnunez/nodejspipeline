@@ -1,4 +1,4 @@
-unode {
+node {
    def gitcommit
    stage('Verificación SCM') {
      checkout scm
