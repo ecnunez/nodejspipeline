@@ -1,4 +1,4 @@
-node {
+unode {
    def gitcommit
    stage('Verificación SCM') {
      checkout scm
@@ -13,7 +13,7 @@ node {
    }
    stage('Docker Build & Push') {
      docker.withRegistry('https://registry.hub.docker.com', 'docker') {
-      def nuestraapp = docker.build("macloujulian/nodejsapp:${gitcommit}", ".")
+      def nuestraapp = docker.build("ecnunez/nodejsapp:${gitcommit}", ".")
       nuestraapp.push()
      }
    }
